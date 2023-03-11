@@ -8,6 +8,7 @@ section {
     color: #fff;
     font-size: 2rem;
     text-align: center;
+    
 }
 
 /* :nth child selectors - selects elements based on their position as a child in any parent element*/
@@ -36,8 +37,35 @@ section:nth-last-child(2) {
     background-color: lightseagreen;
 }
 
-/* The section inside the footer element is both the first child and last child of the parent element. It's also the only section on the page that is an only child. */
+/* The section inside the footer element is both the first child and last child of the parent 
+element. It's also the only section on the page that is an only child. 
+*/
 section:only-child {
     background-color: whitesmoke;
     color: darkslategray;
 }
+
+
+/*Flexbox lays out content based on their content width. In this case, the sections
+are as wide as the h2 heading inside of the them. Due to their default width, these sections
+do not grow to fit the screen width when there is more room inside the flex container.
+
+Flexbox can allow flex items to grow beyond their content width to take up all the room on the 
+row. 
+
+The default is flex-grow: 0; & flex-shrink: 1;
+*/
+
+section{
+    flex-grow: 0;
+    /*flex-grow: 0; No Grow allowed; flex-grow: 1; yes grow allowed*/
+    flex-shrink: 0;
+    flex-basis: 200px; /*the prefered width but allowing the grow and shrink to change that width*/
+    /*flex:1 1 250px; <--- short form*/
+}
+
+/*section:nth-child(2){
+    /*this will effect the 
+    /*flex-grow: 4;
+    
+}*/
